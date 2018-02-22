@@ -1,0 +1,45 @@
+package org.manav.javabrains;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.manav.javabrains.model.User;
+import org.manav.javabrains.service.LoginAuthService;
+
+/**
+ * Servlet implementation class LoginServlet
+ */
+@WebServlet({ "/LoginServlet", "/login" })
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		String user = request.getParameter("user");
+		String password = request.getParameter("password");
+		
+		LoginAuthService loginAuthService = new LoginAuthService();
+		
+		boolean authResult = loginAuthService.authenticate(user, password); 
+		
+		if (authResult == true)  {
+			System.out.println("Login Success!");
+			User userObj = loginAuthService.getUserDetails(user);
+			response.sendRedirect("success.jsp");
+			return;
+		} else {
+			System.out.println("Login Failure!");
+			response.sendRedirect("login.jsp");
+			return;
+		}
+		
+	}
+
+}

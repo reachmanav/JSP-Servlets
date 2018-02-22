@@ -1,0 +1,26 @@
+package org.manav.javabrains.service;
+
+import java.util.HashMap;
+
+public class LoginAuthService {
+	
+	
+	LoginAuthService()  {
+		HashMap<String, String> userList = new HashMap<String,String>();
+	}
+
+	public boolean authenticate(String user, String password)  {
+		
+		
+		System.out.println("Inside authenticate. Value of Password is: "+password);
+		if ((password == null) || (password.trim() == "")) {
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public User getUserDetails (String userId)  {
+		
+	}
+}

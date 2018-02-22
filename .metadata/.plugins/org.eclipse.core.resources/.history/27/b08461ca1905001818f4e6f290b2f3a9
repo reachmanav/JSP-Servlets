@@ -1,0 +1,14 @@
+package org.manav.javabrains;
+
+import javax.servlet.http.HttpServlet;
+
+public class XmlServlet extends HttpServlet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	
+
+}

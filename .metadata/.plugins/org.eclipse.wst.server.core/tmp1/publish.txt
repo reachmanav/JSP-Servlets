@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Mon Jan 29 17:26:27 CST 2018
+org.eclipse.jst.jee.server\:LoginApp=C\:\\Tools\\Tomcat85\\wtpwebapps\\LoginApp
+org.eclipse.jst.jee.server\:SimpleServletProject=C\:\\Tools\\Tomcat85\\wtpwebapps\\SimpleServletProject

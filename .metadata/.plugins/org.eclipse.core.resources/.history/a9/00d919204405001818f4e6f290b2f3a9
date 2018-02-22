@@ -1,0 +1,15 @@
+package org.manav.javabrains;
+
+public class LoginAuthBean {
+
+	public boolean authenticate(String user, String password)  {
+		
+		
+		System.out.println("Value of Password is: "+password);
+		if ((null == password) || ("" .equals(password.trim()))) {
+			return false;
+		}
+		
+		return true;
+	}
+}
